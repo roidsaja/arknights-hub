@@ -46,12 +46,13 @@ const NavigationLink = ({ href, text, router }: any) => {
 
 const NavbarWrapper = styled.nav`
   display: flex;
-  padding-top 1rem;
+  padding-top: 1rem;
   justify-content: space-between;
   padding-bottom: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -6px rgb(0 0 0 / 0.1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 10px 10px -6px rgb(0 0 0 / 0.1);
   border-style: hidden;
 
   .nav_logo {
@@ -66,16 +67,16 @@ const NavbarWrapper = styled.nav`
 
   .nav_item {
     text-transform: capitalize;
-	color: gray;
-	text-decoration: none;
-	padding: 0 10px;
+    color: gray;
+    text-decoration: none;
+    padding: 0 10px;
     margin: 0 10px;
-	border-bottom: 2px solid transparent;
+    border-bottom: 2px solid transparent;
   }
 
   .nav_item_active {
-    color: #FBFFFE;
-	border-color: #67B7A0;
+    color: #fbfffe;
+    border-color: #67b7a0;
   }
 
   @media (max-width: 768px) {
