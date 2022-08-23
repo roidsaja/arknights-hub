@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 type Props = {
@@ -9,7 +10,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Navbar />
       {children}
-      {/* Footer */}
+      <Footer />
     </>
   );
 };
