@@ -11,7 +11,9 @@ const Navbar: React.FC = () => {
     <NavbarWrapper>
       <div className="nav_logo">
         <Link href="/">
-          <Image src="/Arknights-logo.jpeg" width="70" height="70" />
+          <a aria-label="Logo">
+            <Image src="/Arknights-logo.jpeg" width="70" height="70" />
+          </a>
         </Link>
       </div>
       <div className="nav_menu">
@@ -31,7 +33,7 @@ const Navbar: React.FC = () => {
 };
 
 const NavigationLink = ({ href, text, router }: any) => {
-  const isActive = router.asPath === (href === "/home" ? "/" : href);
+  const isActive = router.pathname === (href === "/home" ? "/" : href);
   return (
     <Link href={href === "/home" ? "/" : href} passHref>
       <a
