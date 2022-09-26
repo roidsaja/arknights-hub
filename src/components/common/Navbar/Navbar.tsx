@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
       <div className="nav_logo">
         <Link href="/">
           <a aria-label="Logo">
-            <Image src="/Arknights-logo.jpeg" width="70" height="70" />
+            <Image src="/Arknights-logo.jpeg" width="70" height="70" alt="" />
           </a>
         </Link>
       </div>

@@ -8,16 +8,16 @@ import Image from "next/image";
 const Card = ({ data }: CardItemProps) => {
   return (
     <CardWrapper>
-      <Link href={`/operators/${data._id}`}>
+      <Link href={`/operators/${data?._id}`}>
         <a>
-          {data.art.Base ? (
-            <Image src={data.art.Base} alt={""} width={120} height={120} />
+          {data?.art.Base ? (
+            <Image src={data?.art.Base} alt={""} width={120} height={120} />
           ) : (
             <Image src="/placeholder.svg" alt={""} width={120} height={120} />
           )}
-          <div className="name">{data.name}</div>
-          <div className="class">{data.class[0]}</div>
-          <div className="rarity">{data.rarity}</div>
+          <div className="name">{data?.name}</div>
+          <div className="class">{data?.class[0]}</div>
+          <div className="rarity">{data?.rarity}</div>
         </a>
       </Link>
     </CardWrapper>

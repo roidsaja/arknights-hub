@@ -1,27 +1,47 @@
 import styled from "styled-components";
-import useSWR from "swr";
+import { useState } from "react";
 
 import Card from "src/components/common/Card";
-
-const url =
-  "https://cors-anywhere-image-mltl3mrpia-an.a.run.app/https://rhodesapi.herokuapp.com/api/rhodes/operator";
-const fetcher = async (url: RequestInfo | URL) =>
-  await fetch(url).then((res) => res.json());
+import SearchPanel from "src/components/common/Search/SearchPanel";
+import { SearchPanelProps } from "src/components/Interfaces";
+import { useOperators } from "src/utils/useOperators";
 
 const Operators: React.FC = () => {
-  const { data, error } = useSWR(url, fetcher);
-  return (
-    <WhitePanelWrapper>
-      {!error ? (
-        <>
-          {data?.map((operator: any, index: number) => (
-            <Card key={index} data={operator}></Card>
-          ))}
-        </>
-      ) : (
-        <div className="error">404 Error Fetching Operators</div>
-      )}
-    </WhitePanelWrapper>
+  const { allOperators, isLoading, isError } = useOperators();
+  const [search, setSearch] = useState<string>("");
+
+  const handleQueryChange: SearchPanelProps["handleQueryChange"] = (e) => {
+    const updatedQuery = e.target.value === "" ? "" : e.target.value;
+    setSearch(updatedQuery);
+  };
+
+  return !isLoading ? (
+    <>
+      <SearchPanel handleQueryChange={handleQueryChange} />
+      <WhitePanelWrapper>
+        {!isError ? (
+          <>
+            {allOperators
+              ?.filter((operator: any) => {
+                if (operator === "") return operator;
+                else if (
+                  operator.name.toLowerCase().includes(search.toLowerCase())
+                )
+                  return operator;
+              })
+              .map((operator: any, index: number) => (
+                <Card key={index} data={operator}></Card>
+              ))}
+          </>
+        ) : (
+          <div className="error">Uh Oh Looks Like There is A Problem</div>
+        )}
+      </WhitePanelWrapper>
+    </>
+  ) : (
+    <div>
+      <h1>Loading...</h1>
+    </div>
   );
 };
 
