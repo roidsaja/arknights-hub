@@ -2,26 +2,47 @@ import styled from "styled-components";
 import useSWR from "swr";
 
 import Card from "src/components/common/Card";
+import SearchPanel from "src/components/common/Search/SearchPanel";
+import { SearchPanelProps } from "src/components/Interfaces";
+import { useEffect, useState } from "react";
+import { useDebounce } from "use-debounce";
 
 const url =
   "https://cors-anywhere-image-mltl3mrpia-an.a.run.app/https://rhodesapi.herokuapp.com/api/rhodes/operator";
+
 const fetcher = async (url: RequestInfo | URL) =>
   await fetch(url).then((res) => res.json());
 
 const Operators: React.FC = () => {
+  const [query, setQuery] = useState<string>("");
+  const [debouncedQuery] = useDebounce(query, 1000);
   const { data, error } = useSWR(url, fetcher);
-  return (
-    <WhitePanelWrapper>
-      {!error ? (
-        <>
-          {data?.map((operator: any, index: number) => (
-            <Card key={index} data={operator}></Card>
-          ))}
-        </>
-      ) : (
-        <div className="error">404 Error Fetching Operators</div>
-      )}
-    </WhitePanelWrapper>
+  const [op, setOp] = useState(data);
+
+  const handleQueryChange: SearchPanelProps["handleQueryChange"] = (e) => {
+    const updatedQuery = e.target.value === "" ? "" : e.target.value;
+    setQuery(updatedQuery);
+  };
+
+  return data ? (
+    <>
+      <SearchPanel handleQueryChange={handleQueryChange} />
+      <WhitePanelWrapper>
+        {!error ? (
+          <>
+            {data?.map((operator: any, index: number) => (
+              <Card key={index} data={operator}></Card>
+            ))}
+          </>
+        ) : (
+          <div className="error">Uh Oh Looks Like There is A Problem</div>
+        )}
+      </WhitePanelWrapper>
+    </>
+  ) : (
+    <div>
+      <h1>Loading...</h1>
+    </div>
   );
 };
 
