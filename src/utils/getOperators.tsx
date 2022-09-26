@@ -7,10 +7,7 @@ let url =
 const fetcher = async (url: string) =>
   await axios.get(url).then((res) => res.data);
 
-export const getOperators = (search?: string) => {
-  if (search) {
-    url = `${url}/search?name=${search}`;
-  }
+export const getOperators = () => {
   const { data, error } = useSWR(url, fetcher);
 
   return {

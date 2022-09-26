@@ -20,6 +20,5 @@ export interface SearchItemProps {
 }
 
 export interface SearchPanelProps {
-  handleSearch: (e: { preventDefault: () => void }) => void;
   handleQueryChange: ChangeEventHandler<HTMLInputElement>;
 }

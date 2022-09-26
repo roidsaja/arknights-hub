@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 import Card from "src/components/common/Card";
@@ -10,33 +9,29 @@ import { getOperators } from "src/utils/getOperators";
 const Operators: React.FC = () => {
   const { allOperators, isLoading, isError } = getOperators();
   const [search, setSearch] = useState<string>("");
-  const router = useRouter();
-  const { pathname } = router;
 
   const handleQueryChange: SearchPanelProps["handleQueryChange"] = (e) => {
     const updatedQuery = e.target.value === "" ? "" : e.target.value;
     setSearch(updatedQuery);
   };
 
-  const handleSearch = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (pathname !== "/operators") return;
-    router.replace(`?search=${search}`);
-    setSearch("");
-  };
-
   return !isLoading ? (
     <>
-      <SearchPanel
-        handleQueryChange={handleQueryChange}
-        handleSearch={handleSearch}
-      />
+      <SearchPanel handleQueryChange={handleQueryChange} />
       <WhitePanelWrapper>
         {!isError ? (
           <>
-            {allOperators?.map((operator: any, index: number) => (
-              <Card key={index} data={operator}></Card>
-            ))}
+            {allOperators
+              ?.filter((operator: any) => {
+                if (operator === "") return operator;
+                else if (
+                  operator.name.toLowerCase().includes(search.toLowerCase())
+                )
+                  return operator;
+              })
+              .map((operator: any, index: number) => (
+                <Card key={index} data={operator}></Card>
+              ))}
           </>
         ) : (
           <div className="error">Uh Oh Looks Like There is A Problem</div>
