@@ -4,10 +4,10 @@ import { useState } from "react";
 import Card from "src/components/common/Card";
 import SearchPanel from "src/components/common/Search/SearchPanel";
 import { SearchPanelProps } from "src/components/Interfaces";
-import { getOperators } from "src/utils/getOperators";
+import { useOperators } from "src/utils/useOperators";
 
 const Operators: React.FC = () => {
-  const { allOperators, isLoading, isError } = getOperators();
+  const { allOperators, isLoading, isError } = useOperators();
   const [search, setSearch] = useState<string>("");
 
   const handleQueryChange: SearchPanelProps["handleQueryChange"] = (e) => {

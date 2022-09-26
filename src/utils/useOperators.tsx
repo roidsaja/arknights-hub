@@ -7,7 +7,7 @@ let url =
 const fetcher = async (url: string) =>
   await axios.get(url).then((res) => res.data);
 
-export const getOperators = () => {
+export const useOperators = () => {
   const { data, error } = useSWR(url, fetcher);
 
   return {
@@ -17,7 +17,7 @@ export const getOperators = () => {
   };
 };
 
-export const getOperator = (id: any) => {
+export const useOperator = (id: any) => {
   const { data, error } = useSWR(url ? `${url}/${id}` : null, fetcher);
 
   return {
