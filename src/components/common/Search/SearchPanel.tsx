@@ -3,16 +3,19 @@ import styled from "styled-components";
 
 import { SearchPanelProps } from "src/components/Interfaces";
 
-const SearchPanel = ({ handleQueryChange }: SearchPanelProps) => {
+const SearchPanel = ({ handleQueryChange, handleSearch }: SearchPanelProps) => {
   return (
     <SearchWrapper>
-      <SearchInput
-        onChange={handleQueryChange}
-        placeholder="Search Operator..."
-      />
-      <SearchIconWrapper>
-        <BsSearch color="#4595ff" />
-      </SearchIconWrapper>
+      <form onSubmit={handleSearch}>
+        <SearchInput
+          type="text"
+          onChange={handleQueryChange}
+          placeholder="Search Operator..."
+        />
+        <SearchIconWrapper>
+          <BsSearch color="#4595ff" />
+        </SearchIconWrapper>
+      </form>
     </SearchWrapper>
   );
 };
@@ -36,7 +39,7 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchIconWrapper = styled.div`
+const SearchIconWrapper = styled.button`
   display: flex;
   align-items: center;
   padding: 0 0.5rem;

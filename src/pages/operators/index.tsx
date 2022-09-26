@@ -1,36 +1,40 @@
 import styled from "styled-components";
-import useSWR from "swr";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 import Card from "src/components/common/Card";
 import SearchPanel from "src/components/common/Search/SearchPanel";
 import { SearchPanelProps } from "src/components/Interfaces";
-import { useEffect, useState } from "react";
-import { useDebounce } from "use-debounce";
-
-const url =
-  "https://cors-anywhere-image-mltl3mrpia-an.a.run.app/https://rhodesapi.herokuapp.com/api/rhodes/operator";
-
-const fetcher = async (url: RequestInfo | URL) =>
-  await fetch(url).then((res) => res.json());
+import { getOperators } from "src/utils/getOperators";
 
 const Operators: React.FC = () => {
-  const [query, setQuery] = useState<string>("");
-  const [debouncedQuery] = useDebounce(query, 1000);
-  const { data, error } = useSWR(url, fetcher);
-  const [op, setOp] = useState(data);
+  const { allOperators, isLoading, isError } = getOperators();
+  const [search, setSearch] = useState<string>("");
+  const router = useRouter();
+  const { pathname } = router;
 
   const handleQueryChange: SearchPanelProps["handleQueryChange"] = (e) => {
     const updatedQuery = e.target.value === "" ? "" : e.target.value;
-    setQuery(updatedQuery);
+    setSearch(updatedQuery);
   };
 
-  return data ? (
+  const handleSearch = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (pathname !== "/operators") return;
+    router.replace(`?search=${search}`);
+    setSearch("");
+  };
+
+  return !isLoading ? (
     <>
-      <SearchPanel handleQueryChange={handleQueryChange} />
+      <SearchPanel
+        handleQueryChange={handleQueryChange}
+        handleSearch={handleSearch}
+      />
       <WhitePanelWrapper>
-        {!error ? (
+        {!isError ? (
           <>
-            {data?.map((operator: any, index: number) => (
+            {allOperators?.map((operator: any, index: number) => (
               <Card key={index} data={operator}></Card>
             ))}
           </>
