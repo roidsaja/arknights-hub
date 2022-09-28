@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import { GoStar } from "react-icons/go";
 
 import { CardItemProps } from "src/components/Interfaces";
 import Image from "next/image";
@@ -17,7 +18,39 @@ const Card = ({ data }: CardItemProps) => {
           )}
           <div className="name">{data?.name}</div>
           <div className="class">{data?.class[0]}</div>
-          <div className="rarity">{data?.rarity}</div>
+          <div className="rarity">
+            {data?.rarity === 6 ? (
+              <>
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+              </>
+            ) : data?.rarity === 5 ? (
+              <>
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+              </>
+            ) : data?.rarity === 4 ? (
+              <>
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+              </>
+            ) : (
+              <>
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+                <GoStar color="FFBC45" />
+              </>
+            )}
+          </div>
         </a>
       </Link>
     </CardWrapper>
