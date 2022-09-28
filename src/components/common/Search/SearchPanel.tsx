@@ -39,6 +39,9 @@ const SearchInput = styled.input`
   padding: 10px;
   border: 2px solid transparent;
   background: #404040;
+  &:focus-visible {
+    outline-style: none;
+  }
 `;
 
 const SearchOutline = styled.div`
