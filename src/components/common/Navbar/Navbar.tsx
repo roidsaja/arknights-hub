@@ -81,7 +81,7 @@ const NavbarWrapper = styled.nav`
     border-color: #67b7a0;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 961px) {
     width: 100%;
   }
 `;
