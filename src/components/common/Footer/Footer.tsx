@@ -8,12 +8,12 @@ const Footer: React.FC = () => {
         <a>Code of Conduct</a>
         <a>Privacy Policy</a>
       </div>
-      <div className="copyright">
-        <p>© 2022 Arknights FE </p>
-      </div>
       <div className="project-links">
         <a>Arknights Official</a>
         <a>GitHub</a>
+      </div>
+      <div className="copyright">
+        <p>© 2022 Arknights FE </p>
       </div>
     </FooterWrapper>
   );
@@ -70,14 +70,22 @@ const FooterWrapper = styled.footer`
     .condition-links {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 1px solid white;
     }
     .copyright {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+      margin: 0 auto;
+      text-align: center;
     }
     .project-links {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 1px solid white;
     }
   }
 `;
