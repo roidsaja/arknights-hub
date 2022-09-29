@@ -63,8 +63,8 @@ const FooterWrapper = styled.footer`
     width: 100%;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
     background-color: #181818;
     justify-content: space-between;
     .condition-links {
