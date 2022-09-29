@@ -48,11 +48,9 @@ const NavigationLink = ({ href, text, router }: any) => {
 
 const NavbarWrapper = styled.nav`
   display: flex;
-  padding-top: 1rem;
   justify-content: space-between;
+  padding-top: 1rem;
   padding-bottom: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 10px 10px -6px rgb(0 0 0 / 0.1);
   border-style: hidden;
@@ -60,11 +58,13 @@ const NavbarWrapper = styled.nav`
   .nav_logo {
     display: flex;
     align-items: center;
+    padding-left: 1rem;
   }
 
   .nav_menu {
     display: flex;
     align-items: center;
+    padding-right: 1rem;
   }
 
   .nav_item {
@@ -81,7 +81,7 @@ const NavbarWrapper = styled.nav`
     border-color: #67b7a0;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 961px) {
     width: 100%;
   }
 `;

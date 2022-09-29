@@ -6,14 +6,16 @@ import { SearchPanelProps } from "src/components/Interfaces";
 const SearchPanel = ({ handleQueryChange }: SearchPanelProps) => {
   return (
     <SearchWrapper>
-      <SearchInput
-        type="text"
-        onChange={handleQueryChange}
-        placeholder="Search Operator..."
-      />
-      <SearchIconWrapper>
-        <BsSearch color="#4595ff" />
-      </SearchIconWrapper>
+      <SearchOutline>
+        <SearchIcon type="submit">
+          <BsSearch color="white" />
+        </SearchIcon>
+        <SearchInput
+          type="text"
+          onChange={handleQueryChange}
+          placeholder="Search Operator..."
+        />
+      </SearchOutline>
     </SearchWrapper>
   );
 };
@@ -26,20 +28,40 @@ const SearchWrapper = styled.div`
 `;
 
 const SearchInput = styled.input`
-  border: 0;
-  font-size: 24px;
-  padding: 0;
+  display: block;
+  width: calc(
+    100% - 24px
+  ); /*20px [ left & Right ] padding + 4px border [ left & Right ] */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: white;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  background: #404040;
   &:focus-visible {
     outline-style: none;
   }
-  &::placeholder {
-    color: rgba(0, 0, 0, 0.3);
-  }
 `;
 
-const SearchIconWrapper = styled.div`
+const SearchOutline = styled.div`
+  width: 50%;
   display: flex;
-  align-items: center;
-  padding: 0 0.5rem;
+  position: relative;
+  justify-content: center;
+`;
+
+const SearchIcon = styled.button`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background: transparent;
+  border: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  outline: 0;
 `;
 export default SearchPanel;
