@@ -15,10 +15,15 @@ export interface CardProps {
   data?: CardItemProps[];
 }
 
-export interface SearchItemProps {
-  query: string;
-}
-
 export interface SearchPanelProps {
   handleQueryChange: ChangeEventHandler<HTMLInputElement>;
+}
+
+export interface TopImageProps {
+  image: {
+    Base: string;
+    E2: string;
+  };
+  classType: [string];
+  rarity: number;
 }
