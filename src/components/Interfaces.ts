@@ -5,7 +5,7 @@ export interface CardItemProps {
     _id?: number;
     name: string;
     rarity: number;
-    class: [string];
+    class: string[];
     art: {
       Base: string;
     };
@@ -24,6 +24,6 @@ export interface TopImageProps {
     Base: string;
     E2: string;
   };
-  classType: [string];
+  classType: string[];
   rarity: number;
 }
