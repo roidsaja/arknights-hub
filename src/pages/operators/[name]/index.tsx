@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import TopImageOperator from "src/components/Operator/TopImageOperator";
 
+import OperatorInfo from "src/components/Operator/OperatorInfo";
+import TopImageOperator from "src/components/Operator/TopImageOperator";
 import { useOperator } from "src/utils/useOperators";
 
 const OperatorName = () => {
@@ -14,7 +15,29 @@ const OperatorName = () => {
         classType={operator.class}
         rarity={operator.rarity}
       />
-      <h1>{operator.name}</h1>
+      <OperatorInfo
+        name={operator.name}
+        rarity={operator.rarity}
+        alter={operator.alter}
+        artist={operator.artist}
+        va={operator.va}
+        biography={operator.biography}
+        description={operator.description}
+        quote={operator.quote}
+        voicelines={operator.voicelines}
+        lore={operator.lore}
+        affiliation={operator.affiliation}
+        class={operator.class}
+        tags={operator.tags}
+        statistics={operator.statistics}
+        trait={operator.trait}
+        availability={operator.availability}
+        url={operator.url}
+        headhunting={operator.headhunting}
+        recruitable={operator.recruitable}
+        base={operator.base}
+        module={operator.module}
+      />
     </>
   ) : (
     <>
