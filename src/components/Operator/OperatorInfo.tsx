@@ -2,6 +2,7 @@ import Image from "next/image";
 import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 import { useState } from "react";
+import { GoStar } from "react-icons/go";
 
 import { OperatorInfoProps } from "../Interfaces";
 
@@ -30,17 +31,59 @@ const OperatorInfo = ({
 }: OperatorInfoProps) => {
   return (
     <OperatorInfoWrapper>
-      <h1>{name}</h1>
-      <h1>{rarity}</h1>
-      <h1>{alter}</h1>
-      <h1>{artist}</h1>
-      <h1>{va}</h1>
+      <NameRatingWrapper>
+        <h1 className="name">{name}</h1>
+        <div className="rarity">
+          {rarity === 6 ? (
+            <>
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+            </>
+          ) : rarity === 5 ? (
+            <>
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+            </>
+          ) : rarity === 4 ? (
+            <>
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+            </>
+          ) : (
+            <>
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+              <GoStar color="FFBC45" />
+            </>
+          )}
+        </div>
+      </NameRatingWrapper>
+      <SecondRowWrapper>
+        <div className="alter">Alter: {alter}</div>
+        <div className="artist">Artist: {artist}</div>
+        <div className="va">VA: {va}</div>
+        <span>
+          {tags.map((op, index) => (
+            <div key={index} className="tags">
+              {op}
+            </div>
+          ))}
+        </span>
+      </SecondRowWrapper>
+
       <p>{biography}</p>
       <p>{description}</p>
       <p>{quote}</p>
       <p>{affiliation}</p>
-      <p>{tags}</p>
-      <p>{trait}</p>
       <p>Headhunting: {headhunting}</p>
       <p>Recruitable: {recruitable}</p>
       <p>Availability: {availability}</p>
@@ -54,6 +97,7 @@ const OperatorInfo = ({
           {op}: {lore[op]}
         </p>
       ))}
+      <p>Trait: {trait}</p>
     </OperatorInfoWrapper>
   );
 };
@@ -62,6 +106,37 @@ const OperatorInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+`;
+
+const NameRatingWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.5rem;
+
+  .name {
+    font-size: clamp(18px, 5vw, 48px);
+  }
+  .rarity {
+    font-size: clamp(15px, 5vw, 48px);
+  }
+`;
+
+const SecondRowWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  margin: 0.5rem;
+
+  .tags {
+    margin: 0.25rem;
+    padding: 0 0.5rem;
+    background-color: #4b3fd7;
+  }
 `;
 
 export default OperatorInfo;
