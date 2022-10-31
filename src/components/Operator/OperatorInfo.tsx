@@ -121,12 +121,8 @@ const OperatorInfo = ({
           <p>{quote}</p>
         </div>
         <div>
-          <h2>Voicelines</h2>
-          {Object.keys(voicelines).map((op, index) => (
-            <p key={index}>
-              <span className="op-label">{op}:</span> {voicelines[op]}
-            </p>
-          ))}
+          <h2>Trait</h2>
+          <p>{trait}</p>
         </div>
         <div>
           <h2>Lore</h2>
@@ -137,10 +133,192 @@ const OperatorInfo = ({
           ))}
         </div>
         <div>
-          <h2>Traits</h2>
-          <p>{trait}</p>
+          <h2>Voicelines</h2>
+          {Object.keys(voicelines).map((op, index) => (
+            <p key={index}>
+              <span className="op-label">{op}:</span> {voicelines[op]}
+            </p>
+          ))}
         </div>
       </MainContentWrapper>
+
+      <StatisticsWrapper>
+        <h2 className="stats-title">Statistics</h2>
+        <div className="stats">
+          <div>
+            <h2>Base</h2>
+            <p>
+              <span>HP : </span>
+              {statistics.base.hp}
+            </p>
+            <p>
+              <span>ATK : </span>
+              {statistics.base.atk}
+            </p>
+            <p>
+              <span>DEF : </span>
+              {statistics.base.def}
+            </p>
+            <p>
+              <span>RES : </span>
+              {statistics.base.resist}
+            </p>
+            <p>
+              <span>REDEPLOY : </span>
+              {statistics.base.redeploy}
+            </p>
+            <p>
+              <span>COST : </span>
+              {statistics.base.cost}
+            </p>
+            <p>
+              <span>BLOCK : </span>
+              {statistics.base.block}
+            </p>
+            <p>
+              <span>INT : </span>
+              {statistics.base.interval}
+            </p>
+          </div>
+          <div>
+            <h2>E0 [Maxed]</h2>
+            <p>
+              <span>HP : </span>
+              {statistics.e0max.hp}
+            </p>
+            <p>
+              <span>ATK : </span>
+              {statistics.e0max.atk}
+            </p>
+            <p>
+              <span>DEF : </span>
+              {statistics.e0max.def}
+            </p>
+            <p>
+              <span>RES : </span>
+              {statistics.e0max.resist}
+            </p>
+            <p>
+              <span>REDEPLOY : </span>
+              {statistics.e0max.redeploy}
+            </p>
+            <p>
+              <span>COST : </span>
+              {statistics.e0max.cost}
+            </p>
+            <p>
+              <span>BLOCK : </span>
+              {statistics.e0max.block}
+            </p>
+            <p>
+              <span>INT : </span>
+              {statistics.e0max.interval}
+            </p>
+          </div>
+          <div>
+            <h2>E1 [Maxed]</h2>
+            <p>
+              <span>HP : </span>
+              {statistics.e1max.hp}
+            </p>
+            <p>
+              <span>ATK : </span>
+              {statistics.e1max.atk}
+            </p>
+            <p>
+              <span>DEF : </span>
+              {statistics.e1max.def}
+            </p>
+            <p>
+              <span>RES : </span>
+              {statistics.e1max.resist}
+            </p>
+            <p>
+              <span>REDEPLOY : </span>
+              {statistics.e1max.redeploy}
+            </p>
+            <p>
+              <span>COST : </span>
+              {statistics.e1max.cost}
+            </p>
+            <p>
+              <span>BLOCK : </span>
+              {statistics.e1max.block}
+            </p>
+            <p>
+              <span>INT : </span>
+              {statistics.e1max.interval}
+            </p>
+          </div>
+          <div>
+            <h2>E2 [Maxed]</h2>
+            <p>
+              <span>HP : </span>
+              {statistics.e2max.hp}
+            </p>
+            <p>
+              <span>ATK : </span>
+              {statistics.e2max.atk}
+            </p>
+            <p>
+              <span>DEF : </span>
+              {statistics.e2max.def}
+            </p>
+            <p>
+              <span>RES : </span>
+              {statistics.e2max.resist}
+            </p>
+            <p>
+              <span>REDEPLOY : </span>
+              {statistics.e2max.redeploy}
+            </p>
+            <p>
+              <span>COST : </span>
+              {statistics.e2max.cost}
+            </p>
+            <p>
+              <span>BLOCK : </span>
+              {statistics.e2max.block}
+            </p>
+            <p>
+              <span>INT : </span>
+              {statistics.e2max.interval}
+            </p>
+          </div>
+        </div>
+      </StatisticsWrapper>
+
+      <div>
+        <h2>Module</h2>
+        {module ? (
+          <div>
+            <p>{module.name}</p>
+            <p>{module.level}</p>
+            <p>{module.trust}</p>
+            <p>{module.availability}</p>
+            <p>{module.trait}</p>
+            <p>{module.missions}</p>
+          </div>
+        ) : (
+          <p>No Module Found</p>
+        )}
+      </div>
+
+      <div>
+        <h2>Base Skills</h2>
+        {base.map((op, index) => (
+          <div key={index}>
+            <p>{op.name}</p>
+            <p>{op.level}</p>
+            <p>{op.effects}</p>
+            <p>{op.building}</p>
+          </div>
+        ))}
+        {base[0].name}
+        {base[0].level}
+        {base[0].building}
+        {base[0].effects}
+      </div>
     </OperatorInfoWrapper>
   );
 };
@@ -223,6 +401,41 @@ const MainContentWrapper = styled.div`
   }
   @media screen and (max-width: 961px) {
     max-width: 961px;
+  }
+`;
+
+const StatisticsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #262626;
+  padding: 0.5rem;
+  margin-top: clamp(0.5rem, 10vw, 0.75rem);
+  margin-bottom: clamp(0.5rem, 10vw, 0.75rem);
+
+  h2,
+  span {
+    color: #fdba74;
+  }
+  .stats-title {
+    display: flex;
+    justify-content: center;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 961px) {
+    max-width: 961px;
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 

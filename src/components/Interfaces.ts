@@ -76,6 +76,6 @@ export interface OperatorInfoProps {
     trust: string;
     availability: string;
     trait: string;
-    mission: string[];
+    missions: string[];
   };
 }
