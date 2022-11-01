@@ -28,6 +28,11 @@ const OperatorInfo = ({
   recruitable,
   base,
   module,
+  skills,
+  talents,
+  potential,
+  trust,
+  costs,
 }: OperatorInfoProps) => {
   return (
     <OperatorInfoWrapper>
@@ -103,7 +108,9 @@ const OperatorInfo = ({
         </div>
         <div>
           <h3>Affiliation</h3>
-          <p>{affiliation}</p>
+          {affiliation.map((op, index) => (
+            <div key={index}>{op}</div>
+          ))}
         </div>
       </SecondRowWrapper>
 
@@ -290,7 +297,7 @@ const OperatorInfo = ({
 
       <div>
         <h2>Module</h2>
-        {module ? (
+        {module && (
           <div>
             <p>{module.name}</p>
             <p>{module.level}</p>
@@ -299,25 +306,70 @@ const OperatorInfo = ({
             <p>{module.trait}</p>
             <p>{module.missions}</p>
           </div>
-        ) : (
-          <p>No Module Found</p>
         )}
       </div>
 
       <div>
         <h2>Base Skills</h2>
-        {base.map((op, index) => (
+        {base &&
+          base.map((op, index) => (
+            <div key={index}>
+              <p>{op.name}</p>
+              <p>{op.level}</p>
+              <p>{op.effects}</p>
+              <p>{op.building}</p>
+            </div>
+          ))}
+      </div>
+
+      <div>
+        <h2>Operator Skills</h2>
+        {skills &&
+          skills.map((op, index) => (
+            <div key={index}>
+              <p>{op.name}</p>
+              <p>{op.chargeType}</p>
+              <p>{op.initialSP}</p>
+              <p>{op.skillActivation}</p>
+              <p>{op.skillDescription}</p>
+              <p>{op.spcost}</p>
+            </div>
+          ))}
+      </div>
+
+      <div>
+        <h2>Talents</h2>
+        {talents.map((op, index) => (
           <div key={index}>
             <p>{op.name}</p>
-            <p>{op.level}</p>
-            <p>{op.effects}</p>
-            <p>{op.building}</p>
+            <p>{op.value}</p>
           </div>
         ))}
-        {base[0].name}
-        {base[0].level}
-        {base[0].building}
-        {base[0].effects}
+      </div>
+
+      <div>
+        <h2>Potential</h2>
+        {potential.map((op, index) => (
+          <div key={index}>
+            <p>{op.name}</p>
+            <p>{op.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div>
+        <h2>Trust</h2>
+        {Object.keys(trust).map((op, index) => (
+          <div key={index}>
+            <p>{op}</p>
+            <p>{trust[op]}</p>
+          </div>
+        ))}
+      </div>
+
+      <div>
+        <h2>Cost</h2>
+        {costs.LMD}
       </div>
     </OperatorInfoWrapper>
   );

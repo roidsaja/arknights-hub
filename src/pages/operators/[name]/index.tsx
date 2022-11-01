@@ -37,6 +37,11 @@ const OperatorName = () => {
         recruitable={operator.recruitable}
         base={operator.base}
         module={operator.module}
+        skills={operator.skills}
+        talents={operator.talents}
+        potential={operator.potential}
+        trust={operator.trust}
+        costs={operator.costs}
       />
     </>
   ) : (
