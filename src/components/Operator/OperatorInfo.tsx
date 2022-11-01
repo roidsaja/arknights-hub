@@ -293,84 +293,195 @@ const OperatorInfo = ({
             </p>
           </div>
         </div>
+
+        <div>
+          <h2>Module</h2>
+          {module && (
+            <div>
+              <p>{module.name}</p>
+              <p>{module.level}</p>
+              <p>{module.trust}</p>
+              <p>{module.availability}</p>
+              <p>{module.trait}</p>
+              <p>{module.missions}</p>
+            </div>
+          )}
+        </div>
+
+        <div>
+          <h2>Base Skills</h2>
+          {base &&
+            base.map((op, index) => (
+              <div key={index}>
+                <p>{op.name}</p>
+                <p>{op.level}</p>
+                <p>{op.effects}</p>
+                <p>{op.building}</p>
+              </div>
+            ))}
+        </div>
+
+        <div>
+          <h2>Operator Skills</h2>
+          {skills &&
+            skills.map((op, index) => (
+              <div key={index}>
+                <p>{op.name}</p>
+                <p>{op.chargeType}</p>
+                <p>{op.initialSP}</p>
+                <p>{op.skillActivation}</p>
+                <p>{op.skillDescription}</p>
+                <p>{op.spcost}</p>
+              </div>
+            ))}
+        </div>
+
+        <div>
+          <h2>Talents</h2>
+          {talents.map((op, index) => (
+            <div key={index}>
+              <p>{op.name}</p>
+              <p>{op.value}</p>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <h2>Potential</h2>
+          {potential.map((op, index) => (
+            <div key={index}>
+              <p>{op.name}</p>
+              <p>{op.value}</p>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <h2>Trust</h2>
+          {Object.keys(trust).map((op, index) => (
+            <div key={index}>
+              <p>{op}</p>
+              <p>{trust[op]}</p>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <h2>Cost</h2>
+          <p>
+            <span>LMD: </span>
+            {costs.LMD}
+          </p>
+          <p>
+            <span>Skill Summary 1: </span>
+            {costs["Skill Summary - 1"]}
+          </p>
+          <p>
+            <span>Skill Summary 2: </span>
+            {costs["Skill Summary - 2"]}
+          </p>
+          <p>
+            <span>Skill Summary 3: </span>
+            {costs["Skill Summary - 3"]}
+          </p>
+          <p>
+            <span>Sugar: </span>
+            {costs.Sugar}
+          </p>
+          <p>
+            <span>Polyester: </span>
+            {costs.Polyester}
+          </p>
+          <p>
+            <span>Oriron: </span>
+            {costs.Oriron}
+          </p>
+          <p>
+            <span>Orirock: </span>
+            {costs.Orirock}
+          </p>
+          <p>
+            <span>Polyketon: </span>
+            {costs.Polyketon}
+          </p>
+          <p>
+            <span>Polymerization Preparation: </span>
+            {costs["Polymerization Preparation"]}
+          </p>
+          <p>
+            <span>Polymerized Gel: </span>
+            {costs["Polymerized Gel"]}
+          </p>
+          <p>
+            <span>Orirock Cube: </span>
+            {costs["Orirock Cube"]}
+          </p>
+          <p>
+            <span>Oriron Cluster: </span>
+            {costs["Oriron Cluster"]}
+          </p>
+          <p>
+            <span>Orirock Concentration: </span>
+            {costs["Orirock Concentration"]}
+          </p>
+          <p>
+            <span>Damaged Device: </span>
+            {costs["Damaged Device"]}
+          </p>
+          <p>
+            <span>Manganese Ore: </span>
+            {costs["Manganese Ore"]}
+          </p>
+          <p>
+            <span>Manganese Trihydrate: </span>
+            {costs["Manganese Trihydrate"]}
+          </p>
+          <p>
+            <span>Grindstone: </span>
+            {costs.Grindstone}
+          </p>
+          <p>
+            <span>Grindstone Pentahydrate: </span>
+            {costs["Grindstone Pentahydrate"]}
+          </p>
+          <p>
+            <span>Coagulating Gel: </span>
+            {costs["Coagulating Gel"]}
+          </p>
+          <p>
+            <span>D32 Steel: </span>
+            {costs["D32 Steel"]}
+          </p>
+          <p>
+            <span>Ketton Colloid: </span>
+            {costs["Keton Colloid"]}
+          </p>
+          <p>
+            <span>Incandescent Alloy Block: </span>
+            {costs["Incandescent Alloy Block"]}
+          </p>
+          <p>
+            <span>Optimized Device: </span>
+            {costs["Optimized Device"]}
+          </p>
+          <p>
+            <span>White Horse Kohl: </span>
+            {costs["White Horse Kohl"]}
+          </p>
+          <p>
+            <span>Specialist Chip: </span>
+            {costs["Specialist Chip"]}
+          </p>
+          <p>
+            <span>Specialist Dualchip: </span>
+            {costs["Specialist Dualchip"]}
+          </p>
+          <p>
+            <span>Orirock Concentration: </span>
+            {costs["Orirock Concentration"]}
+          </p>
+        </div>
       </StatisticsWrapper>
-
-      <div>
-        <h2>Module</h2>
-        {module && (
-          <div>
-            <p>{module.name}</p>
-            <p>{module.level}</p>
-            <p>{module.trust}</p>
-            <p>{module.availability}</p>
-            <p>{module.trait}</p>
-            <p>{module.missions}</p>
-          </div>
-        )}
-      </div>
-
-      <div>
-        <h2>Base Skills</h2>
-        {base &&
-          base.map((op, index) => (
-            <div key={index}>
-              <p>{op.name}</p>
-              <p>{op.level}</p>
-              <p>{op.effects}</p>
-              <p>{op.building}</p>
-            </div>
-          ))}
-      </div>
-
-      <div>
-        <h2>Operator Skills</h2>
-        {skills &&
-          skills.map((op, index) => (
-            <div key={index}>
-              <p>{op.name}</p>
-              <p>{op.chargeType}</p>
-              <p>{op.initialSP}</p>
-              <p>{op.skillActivation}</p>
-              <p>{op.skillDescription}</p>
-              <p>{op.spcost}</p>
-            </div>
-          ))}
-      </div>
-
-      <div>
-        <h2>Talents</h2>
-        {talents.map((op, index) => (
-          <div key={index}>
-            <p>{op.name}</p>
-            <p>{op.value}</p>
-          </div>
-        ))}
-      </div>
-
-      <div>
-        <h2>Potential</h2>
-        {potential.map((op, index) => (
-          <div key={index}>
-            <p>{op.name}</p>
-            <p>{op.value}</p>
-          </div>
-        ))}
-      </div>
-
-      <div>
-        <h2>Trust</h2>
-        {Object.keys(trust).map((op, index) => (
-          <div key={index}>
-            <p>{op}</p>
-            <p>{trust[op]}</p>
-          </div>
-        ))}
-      </div>
-
-      <div>
-        <h2>Cost</h2>
-        {costs.LMD}
-      </div>
     </OperatorInfoWrapper>
   );
 };
