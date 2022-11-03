@@ -294,22 +294,45 @@ const OperatorInfo = ({
           </div>
         </div>
 
-        <div>
-          <h2>Module</h2>
-          {module && (
-            <div>
-              <p>{module.name}</p>
-              <p>{module.level}</p>
-              <p>{module.trust}</p>
-              <p>{module.availability}</p>
-              <p>{module.trait}</p>
-              <p>{module.missions}</p>
-            </div>
-          )}
+        <div className="stats-row1">
+          <div>
+            <h2>Module</h2>
+            {module != null ? (
+              <div className="module">
+                <p>{module.name}</p>
+                <p>{module.level}</p>
+                <p>{module.trust}</p>
+                <p>{module.availability}</p>
+                <p>{module.trait}</p>
+                <p>{module.missions}</p>
+              </div>
+            ) : null}
+          </div>
+          <div>
+            <h2>Potential</h2>
+            {potential.map((op, index) => (
+              <div key={index} className="potential">
+                <p>
+                  {op.name}: {op.value}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <h2>Trust</h2>
+            {Object.keys(trust).map((op, index) => (
+              <div key={index} className="trust">
+                <p>
+                  {op}: {trust[op]}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div>
-          <h2>Base Skills</h2>
+        <h2>Base Skills</h2>
+        <div className="skills-base">
           {base &&
             base.map((op, index) => (
               <div key={index}>
@@ -321,8 +344,8 @@ const OperatorInfo = ({
             ))}
         </div>
 
-        <div>
-          <h2>Operator Skills</h2>
+        <h2>Operator Skills</h2>
+        <div className="skills-operator">
           {skills &&
             skills.map((op, index) => (
               <div key={index}>
@@ -339,147 +362,673 @@ const OperatorInfo = ({
         <div>
           <h2>Talents</h2>
           {talents.map((op, index) => (
-            <div key={index}>
-              <p>{op.name}</p>
-              <p>{op.value}</p>
+            <div key={index} className="talents">
+              <p>
+                {op.name}: {op.value}
+              </p>
             </div>
           ))}
         </div>
 
-        <div>
-          <h2>Potential</h2>
-          {potential.map((op, index) => (
-            <div key={index}>
-              <p>{op.name}</p>
-              <p>{op.value}</p>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <h2>Trust</h2>
-          {Object.keys(trust).map((op, index) => (
-            <div key={index}>
-              <p>{op}</p>
-              <p>{trust[op]}</p>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <h2>Cost</h2>
+        <h2>Total Cost</h2>
+        <div className="cost">
+          {/* Essential materials */}
           <p>
-            <span>LMD: </span>
+            <Image
+              src="/CostIcons/lmd.png"
+              width={100}
+              height={80}
+              alt={costs.LMD}
+            />
             {costs.LMD}
           </p>
           <p>
-            <span>Skill Summary 1: </span>
+            <Image
+              src="/CostIcons/skill_sum_1.png"
+              width={80}
+              height={80}
+              alt={costs["Skill Summary - 1"]}
+            />
             {costs["Skill Summary - 1"]}
           </p>
           <p>
-            <span>Skill Summary 2: </span>
+            <Image
+              src="/CostIcons/skill_sum_2.png"
+              width={80}
+              height={80}
+              alt={costs["Skill Summary - 2"]}
+            />
             {costs["Skill Summary - 2"]}
           </p>
           <p>
-            <span>Skill Summary 3: </span>
+            <Image
+              src="/CostIcons/skill_sum_3.png"
+              width={80}
+              height={80}
+              alt={costs["Skill Summary - 3"]}
+            />
             {costs["Skill Summary - 3"]}
           </p>
-          <p>
-            <span>Sugar: </span>
-            {costs.Sugar}
-          </p>
-          <p>
-            <span>Polyester: </span>
-            {costs.Polyester}
-          </p>
-          <p>
-            <span>Oriron: </span>
-            {costs.Oriron}
-          </p>
-          <p>
-            <span>Orirock: </span>
-            {costs.Orirock}
-          </p>
-          <p>
-            <span>Polyketon: </span>
-            {costs.Polyketon}
-          </p>
-          <p>
-            <span>Polymerization Preparation: </span>
-            {costs["Polymerization Preparation"]}
-          </p>
-          <p>
-            <span>Polymerized Gel: </span>
-            {costs["Polymerized Gel"]}
-          </p>
-          <p>
-            <span>Orirock Cube: </span>
-            {costs["Orirock Cube"]}
-          </p>
-          <p>
-            <span>Oriron Cluster: </span>
-            {costs["Oriron Cluster"]}
-          </p>
-          <p>
-            <span>Orirock Concentration: </span>
-            {costs["Orirock Concentration"]}
-          </p>
-          <p>
-            <span>Damaged Device: </span>
-            {costs["Damaged Device"]}
-          </p>
-          <p>
-            <span>Manganese Ore: </span>
-            {costs["Manganese Ore"]}
-          </p>
-          <p>
-            <span>Manganese Trihydrate: </span>
-            {costs["Manganese Trihydrate"]}
-          </p>
-          <p>
-            <span>Grindstone: </span>
-            {costs.Grindstone}
-          </p>
-          <p>
-            <span>Grindstone Pentahydrate: </span>
-            {costs["Grindstone Pentahydrate"]}
-          </p>
-          <p>
-            <span>Coagulating Gel: </span>
-            {costs["Coagulating Gel"]}
-          </p>
-          <p>
-            <span>D32 Steel: </span>
-            {costs["D32 Steel"]}
-          </p>
-          <p>
-            <span>Ketton Colloid: </span>
-            {costs["Keton Colloid"]}
-          </p>
-          <p>
-            <span>Incandescent Alloy Block: </span>
-            {costs["Incandescent Alloy Block"]}
-          </p>
-          <p>
-            <span>Optimized Device: </span>
-            {costs["Optimized Device"]}
-          </p>
-          <p>
-            <span>White Horse Kohl: </span>
-            {costs["White Horse Kohl"]}
-          </p>
-          <p>
-            <span>Specialist Chip: </span>
-            {costs["Specialist Chip"]}
-          </p>
-          <p>
-            <span>Specialist Dualchip: </span>
-            {costs["Specialist Dualchip"]}
-          </p>
-          <p>
-            <span>Orirock Concentration: </span>
-            {costs["Orirock Concentration"]}
-          </p>
+
+          {/* Materials depending on operator */}
+          {costs.Ester != null ? (
+            <p>
+              <Image
+                src="/CostIcons/ester.png"
+                width={80}
+                height={80}
+                alt={costs.Ester}
+              />
+              {costs.Ester}
+            </p>
+          ) : null}
+          {costs.Polyketon != null ? (
+            <p>
+              <Image
+                src="/CostIcons/polyketon.png"
+                width={80}
+                height={80}
+                alt={costs.Polyketon}
+              />
+              {costs.Polyketon}
+            </p>
+          ) : null}
+          {costs.Aketon != null ? (
+            <p>
+              <Image
+                src="/CostIcons/aketon.png"
+                width={80}
+                height={80}
+                alt={costs.Aketon}
+              />
+              {costs.Aketon}
+            </p>
+          ) : null}
+          {costs.Grindstone != null ? (
+            <p>
+              <Image
+                src="/CostIcons/grindstone.png"
+                width={80}
+                height={80}
+                alt={costs.Grindstone}
+              />
+              {costs.Grindstone}
+            </p>
+          ) : null}
+          {costs.Polyester != null ? (
+            <p>
+              <Image
+                src="/CostIcons/polyester.png"
+                width={80}
+                height={80}
+                alt={costs.Polyester}
+              />
+              {costs.Polyester}
+            </p>
+          ) : null}
+          {costs.Oriron != null ? (
+            <p>
+              <Image
+                src="/CostIcons/oriron.png"
+                width={80}
+                height={80}
+                alt={costs.Oriron}
+              />
+              {costs.Oriron}
+            </p>
+          ) : null}
+          {costs.Orirock != null ? (
+            <p>
+              <Image
+                src="/CostIcons/orirock.png"
+                width={80}
+                height={80}
+                alt={costs.Orirock}
+              />
+              {costs.Orirock}
+            </p>
+          ) : null}
+          {costs.Sugar != null ? (
+            <p>
+              <Image
+                src="/CostIcons/sugar.png"
+                width={80}
+                height={80}
+                alt={costs.Sugar}
+              />
+              {costs.Sugar}
+            </p>
+          ) : null}
+          {costs.Diketon != null ? (
+            <p>
+              <Image
+                src="/CostIcons/diketon.png"
+                width={80}
+                height={80}
+                alt={costs.Diketon}
+              />
+              {costs.Diketon}
+            </p>
+          ) : null}
+          {costs.Device != null ? (
+            <p>
+              <Image
+                src="/CostIcons/device.png"
+                width={80}
+                height={80}
+                alt={costs.Device}
+              />
+              {costs.Device}
+            </p>
+          ) : null}
+          {costs["Sugar Substitute"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/sugar_substitute.png"
+                width={80}
+                height={80}
+                alt={costs["Sugar Substitute"]}
+              />
+              {costs["Sugar Substitute"]}
+            </p>
+          ) : null}
+          {costs["Integrated Device"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/integrated_device.png"
+                width={80}
+                height={80}
+                alt={costs["Integrated Device"]}
+              />
+              {costs["Integrated Device"]}
+            </p>
+          ) : null}
+          {costs["Damaged Device"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/damaged_device.png"
+                width={80}
+                height={80}
+                alt={costs["Damaged Device"]}
+              />
+              {costs["Damaged Device"]}
+            </p>
+          ) : null}
+          {costs["Optimized Device"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/optimized_device.png"
+                width={80}
+                height={80}
+                alt={costs["Optimized Device"]}
+              />
+              {costs["Optimized Device"]}
+            </p>
+          ) : null}
+          {costs["Manganese Ore"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/manganese_ore.png"
+                width={80}
+                height={80}
+                alt={costs["Manganese Ore"]}
+              />
+              {costs["Manganese Ore"]}
+            </p>
+          ) : null}
+          {costs["Manganese Trihydrate"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/manganese_trihydrate.png"
+                width={80}
+                height={80}
+                alt={costs["Manganese Trihydrate"]}
+              />
+              {costs["Manganese Trihydrate"]}
+            </p>
+          ) : null}
+          {costs["Oriron Shard"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/oriron_shard.png"
+                width={80}
+                height={80}
+                alt={costs["Oriron Shard"]}
+              />
+              {costs["Oriron Shard"]}
+            </p>
+          ) : null}
+          {costs["Oriron Cluster"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/oriron_cluster.png"
+                width={80}
+                height={80}
+                alt={costs["Oriron Cluster"]}
+              />
+              {costs["Oriron Cluster"]}
+            </p>
+          ) : null}
+          {costs["Oriron Block"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/oriron_block.png"
+                width={80}
+                height={80}
+                alt={costs["Oriron Block"]}
+              />
+              {costs["Oriron Block"]}
+            </p>
+          ) : null}
+          {costs["Loxic Kohl"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/loxic_kohl.png"
+                width={80}
+                height={80}
+                alt={costs["Loxic Kohl"]}
+              />
+              {costs["Loxic Kohl"]}
+            </p>
+          ) : null}
+          {costs["White Horse Kohl"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/white_horse_kohl.png"
+                width={80}
+                height={80}
+                alt={costs["White Horse Kohl"]}
+              />
+              {costs["White Horse Kohl"]}
+            </p>
+          ) : null}
+          {costs["Keton Colloid"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/keton_colloid.png"
+                width={80}
+                height={80}
+                alt={costs["D32 Steel"]}
+              />
+              {costs["Keton Colloid"]}
+            </p>
+          ) : null}
+          {costs["D32 Steel"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/d32_steel.png"
+                width={80}
+                height={80}
+                alt={costs["D32 Steel"]}
+              />
+              {costs["D32 Steel"]}
+            </p>
+          ) : null}
+          {costs["Incandescent Alloy"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/incandescent_alloy.png"
+                width={80}
+                height={80}
+                alt={costs["Incandescent Alloy"]}
+              />
+              {costs["Incandescent Alloy"]}
+            </p>
+          ) : null}
+          {costs["Incandescent Alloy Block"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/incandescent_alloy_block.png"
+                width={80}
+                height={80}
+                alt={costs["Incandescent Alloy Block"]}
+              />
+              {costs["Incandescent Alloy Block"]}
+            </p>
+          ) : null}
+          {costs["Polymerization Preparation"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/polymerization_preparation.png"
+                width={80}
+                height={80}
+                alt={costs["Polymerization Preparation"]}
+              />
+              {costs["Polymerization Preparation"]}
+            </p>
+          ) : null}
+          {costs["Grindstone Pentahydrate"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/grindstone_pentahydrate.png"
+                width={80}
+                height={80}
+                alt={costs["Grindstone Pentahydrate"]}
+              />
+              {costs["Grindstone Pentahydrate"]}
+            </p>
+          ) : null}
+          {costs["Coagulating Gel"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/coagulating_gel.png"
+                width={80}
+                height={80}
+                alt={costs["Coagulating Gel"]}
+              />
+              {costs["Coagulating Gel"]}
+            </p>
+          ) : null}
+          {costs["Polymerized Gel"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/polymerized_gel.png"
+                width={80}
+                height={80}
+                alt={costs["Polymerized Gel"]}
+              />
+              {costs["Polymerized Gel"]}
+            </p>
+          ) : null}
+          {costs["Orirock Cube"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/orirock_cube.png"
+                width={80}
+                height={80}
+                alt={costs["Orirock Cube"]}
+              />
+              {costs["Orirock Cube"]}
+            </p>
+          ) : null}
+          {costs["Orirock Cluster"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/orirock_cluster.png"
+                width={80}
+                height={80}
+                alt={costs["Orirock Cluster"]}
+              />
+              {costs["Orirock Cluster"]}
+            </p>
+          ) : null}
+          {costs["Orirock Concentration"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/orirock_concentration.png"
+                width={80}
+                height={80}
+                alt={costs["Orirock Concentration"]}
+              />
+              {costs["Orirock Concentration"]}
+            </p>
+          ) : null}
+          {costs["RMA70-12"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/rma7012.png"
+                width={80}
+                height={80}
+                alt={costs["RMA70-12"]}
+              />
+              {costs["RMA70-12"]}
+            </p>
+          ) : null}
+          {costs["RMA70-24"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/rma7024.png"
+                width={80}
+                height={80}
+                alt={costs["RMA70-24"]}
+              />
+              {costs["RMA70-24"]}
+            </p>
+          ) : null}
+          {costs["Bipolar Nanoflake"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/bipolar_nanoflake.png"
+                width={80}
+                height={80}
+                alt={costs["Bipolar Nanoflake"]}
+              />
+              {costs["Bipolar Nanoflake"]}
+            </p>
+          ) : null}
+          {costs["Crystalline Component"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/crystalline_component.png"
+                width={80}
+                height={80}
+                alt={costs["Crystalline Component"]}
+              />
+              {costs["Crystalline Component"]}
+            </p>
+          ) : null}
+          {costs["Crystalline Circuit"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/crystalline_circuit.png"
+                width={80}
+                height={80}
+                alt={costs["Crystalline Circuit"]}
+              />
+              {costs["Crystalline Circuit"]}
+            </p>
+          ) : null}
+          {costs["Crystalline Electronic Unit"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/crystalline_electronic_unit.png"
+                width={80}
+                height={80}
+                alt={costs["Crystalline Electronic Unit"]}
+              />
+              {costs["Crystalline Electronic Unit"]}
+            </p>
+          ) : null}
+          {costs["Compound Cutting Fluid"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/compound_cutting_fluid.png"
+                width={80}
+                height={80}
+                alt={costs["Compound Cutting Fluid"]}
+              />
+              {costs["Compound Cutting Fluid"]}
+            </p>
+          ) : null}
+          {costs["Cutting Fluid Solution"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/cutting_fluid_solution.png"
+                width={80}
+                height={80}
+                alt={costs["Cutting Fluid Solution"]}
+              />
+              {costs["Cutting Fluid Solution"]}
+            </p>
+          ) : null}
+          {costs["Refined Solvent"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/refined_solvent.png"
+                width={80}
+                height={80}
+                alt={costs["Refined Solvent"]}
+              />
+              {costs["Refined Solvent"]}
+            </p>
+          ) : null}
+          {costs["Semi-Synthetic Solvent"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/semi_synthetic_solvent.png"
+                width={80}
+                height={80}
+                alt={costs["Semi-Synthetic Solvent"]}
+              />
+              {costs["Semi-Synthetic Solvent"]}
+            </p>
+          ) : null}
+
+          {/* Specific to class upgrade chips */}
+          {costs["Specialist Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/specialist_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Specialist Chip"]}
+              />
+              {costs["Specialist Chip"]}
+            </p>
+          ) : null}
+          {costs["Specialist Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/specialist_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Specialist Dualchip"]}
+              />
+              {costs["Specialist Dualchip"]}
+            </p>
+          ) : null}
+          {costs["Guard Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/guard_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Guard Chip"]}
+              />
+              {costs["Guard Chip"]}
+            </p>
+          ) : null}
+          {costs["Guard Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/guard_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Guard Dualchip"]}
+              />
+              {costs["Guard Dualchip"]}
+            </p>
+          ) : null}
+          {costs["Caster Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/caster_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Caster Chip"]}
+              />
+              {costs["Caster Chip"]}
+            </p>
+          ) : null}
+          {costs["Caster Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/caster_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Caster Dualchip"]}
+              />
+              {costs["Specialist Dualchip"]}
+            </p>
+          ) : null}
+          {costs["Medic Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/medic_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Medic Chip"]}
+              />
+              {costs["Medic Chip"]}
+            </p>
+          ) : null}
+          {costs["Medic Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/medic_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Medic Dualchip"]}
+              />
+              {costs["Medic Dualchip"]}
+            </p>
+          ) : null}
+          {costs["Supporter Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/supporter_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Supporter Chip"]}
+              />
+              {costs["Supporter Chip"]}
+            </p>
+          ) : null}
+          {costs["Supporter Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/supporter_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Supporter Dualchip"]}
+              />
+              {costs["Supporter Dualchip"]}
+            </p>
+          ) : null}
+          {costs["Vanguard Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/vanguard_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Vanguard Chip"]}
+              />
+              {costs["Vanguard Chip"]}
+            </p>
+          ) : null}
+          {costs["Vanguard Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/vanguard_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Vanguard Dualchip"]}
+              />
+              {costs["Vanguard Dualchip"]}
+            </p>
+          ) : null}
+          {costs["Sniper Chip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/sniper_chip.png"
+                width={80}
+                height={80}
+                alt={costs["Sniper Chip"]}
+              />
+              {costs["Sniper Chip"]}
+            </p>
+          ) : null}
+          {costs["Sniper Dualchip"] != null ? (
+            <p>
+              <Image
+                src="/CostIcons/sniper_dualchip.png"
+                width={80}
+                height={80}
+                alt={costs["Sniper Dualchip"]}
+              />
+              {costs["Sniper Dualchip"]}
+            </p>
+          ) : null}
         </div>
       </StatisticsWrapper>
     </OperatorInfoWrapper>
@@ -590,6 +1139,37 @@ const StatisticsWrapper = styled.div`
     align-items: center;
     justify-items: center;
     text-align: center;
+
+    &-row1 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  .skills {
+    &-base {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &-operator {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .cost {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 1rem;
   }
 
   @media screen and (max-width: 961px) {
