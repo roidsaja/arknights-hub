@@ -335,7 +335,7 @@ const OperatorInfo = ({
         <div className="skills-base">
           {base &&
             base.map((op, index) => (
-              <div key={index}>
+              <div key={index} className="skills-base-item">
                 <p>{op.name}</p>
                 <p>{op.level}</p>
                 <p>{op.effects}</p>
@@ -348,13 +348,13 @@ const OperatorInfo = ({
         <div className="skills-operator">
           {skills &&
             skills.map((op, index) => (
-              <div key={index}>
-                <p>{op.name}</p>
-                <p>{op.chargeType}</p>
-                <p>{op.initialSP}</p>
-                <p>{op.skillActivation}</p>
-                <p>{op.skillDescription}</p>
-                <p>{op.spcost}</p>
+              <div key={index} className="skills-operator-item">
+                <p>Name: {op.name}</p>
+                <p>SP: {op.spcost}</p>
+                <p>Initial SP: {op.initialSP}</p>
+                <p>Charge Type: {op.chargeType}</p>
+                <p>Activation: {op.skillActivation}</p>
+                <p>Description: {op.skillDescription}</p>
               </div>
             ))}
         </div>
@@ -1155,11 +1155,21 @@ const StatisticsWrapper = styled.div`
     &-base {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      &-item {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &-operator {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      &-item {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
     }
   }
 
