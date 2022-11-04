@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
-import { useState } from "react";
 import { GoStar } from "react-icons/go";
 
 import { OperatorInfoProps } from "../Interfaces";
+import CollapseIcon from "./CollapseIcon";
 
 const OperatorInfo = ({
   name,
@@ -106,47 +105,38 @@ const OperatorInfo = ({
             </div>
           ))}
         </div>
-        <div>
+        <div className="affiliation">
           <h3>Affiliation</h3>
           {affiliation.map((op, index) => (
-            <div key={index}>{op}</div>
+            <p key={index}>{op}</p>
           ))}
         </div>
       </SecondRowWrapper>
 
       <MainContentWrapper>
-        <div>
-          <h2>Biography</h2>
-          <p>{biography}</p>
-        </div>
-        <div>
-          <h2>Description</h2>
-          <p>{description}</p>
-        </div>
-        <div>
-          <h2>Quote</h2>
-          <p>{quote}</p>
-        </div>
-        <div>
-          <h2>Trait</h2>
-          <p>{trait}</p>
-        </div>
-        <div>
-          <h2>Lore</h2>
-          {Object.keys(lore).map((op, index) => (
+        <CollapseIcon title={"Biography"} children={biography}></CollapseIcon>
+        <CollapseIcon
+          title={"Description"}
+          children={description}
+        ></CollapseIcon>
+        <CollapseIcon title={"Quote"} children={quote}></CollapseIcon>
+        <CollapseIcon title={"Trait"} children={trait}></CollapseIcon>
+        <CollapseIcon
+          title={"Lore"}
+          children={Object.keys(lore).map((op, index) => (
             <p key={index}>
               <span className="op-label">{op}:</span> {lore[op]}
             </p>
           ))}
-        </div>
-        <div>
-          <h2>Voicelines</h2>
-          {Object.keys(voicelines).map((op, index) => (
+        ></CollapseIcon>
+        <CollapseIcon
+          title={"Voicelines"}
+          children={Object.keys(voicelines).map((op, index) => (
             <p key={index}>
               <span className="op-label">{op}:</span> {voicelines[op]}
             </p>
           ))}
-        </div>
+        ></CollapseIcon>
       </MainContentWrapper>
 
       <StatisticsWrapper>
@@ -1107,6 +1097,9 @@ const MainContentWrapper = styled.div`
 
   h2 {
     color: #fdba74;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
   .op-label {
     color: #fdba74;
