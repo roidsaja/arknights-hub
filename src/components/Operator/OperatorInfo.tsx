@@ -114,29 +114,24 @@ const OperatorInfo = ({
       </SecondRowWrapper>
 
       <MainContentWrapper>
-        <CollapseIcon title={"Biography"} children={biography}></CollapseIcon>
-        <CollapseIcon
-          title={"Description"}
-          children={description}
-        ></CollapseIcon>
-        <CollapseIcon title={"Quote"} children={quote}></CollapseIcon>
-        <CollapseIcon title={"Trait"} children={trait}></CollapseIcon>
-        <CollapseIcon
-          title={"Lore"}
-          children={Object.keys(lore).map((op, index) => (
+        <CollapseIcon title={"Biography"}>{biography}</CollapseIcon>
+        <CollapseIcon title={"Description"}>{description}</CollapseIcon>
+        <CollapseIcon title={"Quote"}>{quote}</CollapseIcon>
+        <CollapseIcon title={"Trait"}>{trait}</CollapseIcon>
+        <CollapseIcon title={"Lore"}>
+          {Object.keys(lore).map((op, index) => (
             <p key={index}>
               <span className="op-label">{op}:</span> {lore[op]}
             </p>
           ))}
-        ></CollapseIcon>
-        <CollapseIcon
-          title={"Voicelines"}
-          children={Object.keys(voicelines).map((op, index) => (
+        </CollapseIcon>
+        <CollapseIcon title={"Voicelines"}>
+          {Object.keys(voicelines).map((op, index) => (
             <p key={index}>
               <span className="op-label">{op}:</span> {voicelines[op]}
             </p>
           ))}
-        ></CollapseIcon>
+        </CollapseIcon>
       </MainContentWrapper>
 
       <StatisticsWrapper>

@@ -17,7 +17,7 @@ const CollapseIcon: React.FC<Props> = ({ title, children }) => {
           {isExpanded ? <GoTriangleUp /> : <GoTriangleDown />}
         </Expandongs>
       </h2>
-      <p {...getCollapseProps()}>{children}</p>
+      <div {...getCollapseProps()}>{children}</div>
     </div>
   );
 };
