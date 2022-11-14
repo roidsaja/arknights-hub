@@ -4,11 +4,13 @@ import styled from "styled-components";
 const Home: NextPage = () => {
   return (
     <Container>
+      <title>Arknights Hub</title>
       <div className="overlay">
         <div className="art"></div>
       </div>
-      <p className="subtitle">
-        A Frontend Project For Showcasing Arknights Operators
+      <p className="subtitle">Arknights Hub</p>
+      <p className="subtitle-small">
+        A frontend project for showcasing Arknights Operators
       </p>
     </Container>
   );
@@ -32,6 +34,20 @@ const Container = styled.div`
     z-index: 1;
     text-transform: uppercase;
     text-align: start;
+
+    &-small {
+      font-style: normal;
+      font-weight: 400;
+      font-size: clamp(12px, 5vw, 24px);
+      line-height: clamp(48px, 5vw, 56px);
+      color: #fbfffe;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      z-index: 1;
+      text-transform: uppercase;
+      text-align: start;
+    }
   }
 
   .overlay {
@@ -58,9 +74,20 @@ const Container = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      top: clamp(10%, 1vw, 30%);
-      left: clamp(10%, 1vw, 40%);
       text-align: center;
+      top: 40%;
+      left: 0;
+      margin: 0 clamp(1rem, 100vw, 2rem);
+
+      &-small {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        top: 50%;
+        left: 0;
+        margin: 0 clamp(1rem, 100vw, 2rem);
+      }
     }
     .overlay {
       display: flex;

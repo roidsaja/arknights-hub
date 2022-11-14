@@ -19,6 +19,7 @@ const Operators: React.FC = () => {
 
   return !isLoading ? (
     <>
+      <title>Operators</title>
       <SearchPanel handleQueryChange={handleQueryChange} />
       <WhitePanelWrapper>
         {!isError ? (
