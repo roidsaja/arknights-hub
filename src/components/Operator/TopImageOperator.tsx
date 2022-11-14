@@ -19,8 +19,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
           <Image
             src={"/SkinIcons/base.png"}
             alt=""
-            width={100}
-            height={100}
+            width={128}
+            height={125}
           ></Image>
         </div>
         <div
@@ -32,8 +32,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
           <Image
             src={"/SkinIcons/E1.png"}
             alt=""
-            width={100}
-            height={100}
+            width={128}
+            height={125}
           ></Image>
         </div>
 
@@ -47,16 +47,16 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/SkinIcons/E2.png"}
               alt=""
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </div>
         ) : (
           <Image
             src={"/SkinIcons/E2.png"}
             alt=""
-            width={100}
-            height={100}
+            width={128}
+            height={125}
           ></Image>
         )}
       </SkinIconsWrapper>

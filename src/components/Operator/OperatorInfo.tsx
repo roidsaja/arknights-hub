@@ -36,6 +36,7 @@ const OperatorInfo = ({
   return (
     <OperatorInfoWrapper>
       <NameRatingWrapper>
+        <title>{name}</title>
         <h1 className="name">{name}</h1>
         <div className="rarity">
           {rarity === 6 ? (

@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Home: NextPage = () => {
   return (
     <Container>
+      <title>Arknights Hub</title>
       <div className="overlay">
         <div className="art"></div>
       </div>
