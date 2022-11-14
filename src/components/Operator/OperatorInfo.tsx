@@ -452,17 +452,6 @@ const OperatorInfo = ({
               {costs.Polyester}
             </p>
           ) : null}
-          {costs.Oriron != null ? (
-            <p>
-              <Image
-                src="/CostIcons/oriron.png"
-                width={80}
-                height={80}
-                alt={costs.Oriron}
-              />
-              {costs.Oriron}
-            </p>
-          ) : null}
           {costs.Orirock != null ? (
             <p>
               <Image
@@ -582,6 +571,17 @@ const OperatorInfo = ({
                 alt={costs["Oriron Shard"]}
               />
               {costs["Oriron Shard"]}
+            </p>
+          ) : null}
+          {costs.Oriron != null ? (
+            <p>
+              <Image
+                src="/CostIcons/oriron.png"
+                width={80}
+                height={80}
+                alt={costs.Oriron}
+              />
+              {costs.Oriron}
             </p>
           ) : null}
           {costs["Oriron Cluster"] != null ? (

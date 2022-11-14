@@ -78,8 +78,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/sniper.png"}
               alt={"Sniper"}
               title={"Sniper"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Guard" ? (
@@ -88,8 +88,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/guard.png"}
               alt={"Guard"}
               title={"Guard"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Vanguard" ? (
@@ -98,8 +98,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/vanguard.png"}
               alt={"Vanguard"}
               title={"Vanguard"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Supporter" ? (
@@ -108,8 +108,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/supporter.png"}
               alt={"Supporter"}
               title={"Supporter"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Medic" ? (
@@ -118,8 +118,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/medic.png"}
               alt={"Medic"}
               title={"Medic"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Caster" ? (
@@ -128,8 +128,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/caster.png"}
               alt={"Caster"}
               title={"Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={128}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Defender" ? (
@@ -138,8 +138,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/defender.png"}
               alt={"Defender"}
               title={"Defender"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[0] === "Specialist" ? (
@@ -148,8 +148,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
               src={"/ClassIcons/specialist.png"}
               alt={"Specialist"}
               title={"Specialist"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : (
@@ -161,8 +161,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/vanguard_flagbearer.png"}
               alt={"Flagbearer/Standard Bearer"}
-              width={100}
-              height={100}
+              width={128}
+              height={128}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "DP-On-Kill" || classType[2] === "Charger" ? (
@@ -170,8 +170,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/vanguard_charger.png"}
               alt={"DP-On-Kill/Charger"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Skill-DP" || classType[2] === "Pioneer" ? (
@@ -179,8 +179,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/vanguard_pioneer.png"}
               alt={"Skill-DP/Pioneer"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Summoner" || classType[2] === "Tactician" ? (
@@ -188,8 +188,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/vanguard_summoner.png"}
               alt={"Summoner/Tactician"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Artificer" ? (
@@ -197,8 +197,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/supporter_artificer.png"}
               alt={"Artificer"}
-              width={100}
-              height={100}
+              width={128}
+              height={128}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Buffer" || classType[2] === "Abjurer" ? (
@@ -206,8 +206,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/supporter_buffer.png"}
               alt={"Buffer/Abjurer"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Slower" || classType[2] === "Decel Binder" ? (
@@ -215,8 +215,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/supporter_slower.png"}
               alt={"Slower/Decel Binder"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Debuffer" || classType[2] === "Hexer" ? (
@@ -224,8 +224,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/supporter_hexer.png"}
               alt={"Debuffer/Hexer"}
-              width={100}
-              height={100}
+              width={128}
+              height={128}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Aura" || classType[2] === "Bard" ? (
@@ -233,8 +233,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/supporter_bard.png"}
               alt={"Aura/Bard"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Summoner" ? (
@@ -242,8 +242,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/supporter_summoner.png"}
               alt={"Summoner"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Subsitute" || classType[2] === "Dollkeeper" ? (
@@ -251,8 +251,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_dollkeeper.png"}
               alt={"Substitute/Dollkeeper"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "DP-Drain" || classType[2] === "Merchant" ? (
@@ -260,8 +260,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_merchant.png"}
               alt={"DP-Drain/Merchant"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Fast-Redeploy" || classType[2] === "Executor" ? (
@@ -269,8 +269,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_executor.png"}
               alt={"Fast-Redeploy/Executor"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Pusher" || classType[2] === "Push Stroker" ? (
@@ -278,8 +278,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_pusher.png"}
               alt={"Pusher/Push Stroker"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Puller" || classType[2] === "Hookmaster" ? (
@@ -287,8 +287,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_hookmaster.png"}
               alt={"Puller/Hookmaster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Ambusher" ? (
@@ -296,8 +296,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_ambusher.png"}
               alt={"Ambusher"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Sacrificial Specialist" ? (
@@ -305,8 +305,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_sacrificial.png"}
               alt={"Sacrificial Specialist"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Trapmaster" ? (
@@ -314,8 +314,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/specialist_trapmaster.png"}
               alt={"Trapmaster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "ST" && classType[2] === "Medic" ? (
@@ -323,8 +323,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/medic_st.png"}
               alt={"ST/Medic"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "AoE" && classType[2] === "Multi-Target Medic" ? (
@@ -332,8 +332,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/medic_aoe.png"}
               alt={"AoE/Multi-Target Medic"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Wide-Range" || classType[2] === "Therapist" ? (
@@ -341,8 +341,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/medic_therapist.png"}
               alt={"Wide-Range/Therapist"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Wandering Medic" ? (
@@ -350,8 +350,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/medic_wandering.png"}
               alt={"Wandering Medic"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Anti-Air" || classType[2] === "Marksman" ? (
@@ -359,8 +359,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_marksman.png"}
               alt={"Anti-Air/Marksman"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Boomstick" || classType[2] === "Spreadshooter" ? (
@@ -368,8 +368,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_boomstick.png"}
               alt={"Boomstick/Spreadshooter"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Aftershock" || classType[2] === "Flinger" ? (
@@ -377,8 +377,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_aftershock.png"}
               alt={"Aftershock/Flinger"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Close Range" ||
@@ -387,8 +387,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_heavyshooter.png"}
               alt={"Close Range/Heavyshooter"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Heavyweight" || classType[2] === "Besieger" ? (
@@ -396,8 +396,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_heavyweight.png"}
               alt={"Heavyweight/Besieger"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "AoE" && classType[2] === "Artilleryman" ? (
@@ -405,8 +405,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_aoe.png"}
               alt={"AoE/Artilleryman"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Long-Range" && classType[2] === "Deadeye" ? (
@@ -414,8 +414,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/sniper_longrange.png"}
               alt={"Long-Range/Deadeye"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Ranged" || classType[2] === "Lord" ? (
@@ -423,8 +423,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_lord.png"}
               alt={"Ranged/Lord"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Brawler" || classType[2] === "Fighter" ? (
@@ -432,8 +432,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_brawler.png"}
               alt={"Brawler/Fighter"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "AoE" && classType[2] === "Centurion" ? (
@@ -441,8 +441,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_centurion.png"}
               alt={"AoE/Centurion"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Duelist" && classType[2] === "Dreadnought" ? (
@@ -450,8 +450,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_duelist.png"}
               alt={"Duelist/Dreadnought"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Support" || classType[2] === "Instructor" ? (
@@ -459,8 +459,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_instructor.png"}
               alt={"Support/Instructor"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Enmity" && classType[2] === "Musha" ? (
@@ -468,8 +468,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_musha.png"}
               alt={"Enmity/Musha"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Dualstrike" || classType[2] === "Swordmaster" ? (
@@ -477,8 +477,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_dualstrike.png"}
               alt={"Dualstrike/Swordmaster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Arts Fighter" ? (
@@ -486,8 +486,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_artsfighter.png"}
               alt={"Arts Fighter"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Reaper Guard" ? (
@@ -495,8 +495,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_reaper.png"}
               alt={"Reaper Guard"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Liberator Guard" ? (
@@ -504,8 +504,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/guard_liberator.png"}
               alt={"Liberator Guard"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Healing" || classType[2] === "Guardian" ? (
@@ -513,8 +513,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/defender_guardian.png"}
               alt={"Healing/Guardian"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Enmity" && classType[2] === "Juggernaut" ? (
@@ -522,8 +522,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/defender_juggernaut.png"}
               alt={"Enmity/Juggernaut"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Normal" || classType[2] === "Protector" ? (
@@ -531,8 +531,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/defender_protector.png"}
               alt={"Normal/Protector"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Duelist" ? (
@@ -540,8 +540,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/defender_duelist.png"}
               alt={"Duelist"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Fortress" ? (
@@ -549,8 +549,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/defender_fortress.png"}
               alt={"Fortress"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Arts Protector" ? (
@@ -558,8 +558,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/defender_artsprotector.png"}
               alt={"Arts Protector"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "ST" && classType[2] === "Core Caster" ? (
@@ -567,8 +567,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_core.png"}
               alt={"ST/Core Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Burninator" || classType[2] === "Blast Caster" ? (
@@ -576,8 +576,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_burninator.png"}
               alt={"Burninator/Blast Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Drone" || classType[2] === "Mech-Accord" ? (
@@ -585,8 +585,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_drone.png"}
               alt={"Drone/Mech-Accord"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Modal" || classType[2] === "Phalanx Caster" ? (
@@ -594,8 +594,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_phalanx.png"}
               alt={"Modal/Phalanx Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "AoE" && classType[2] === "Splash Caster" ? (
@@ -603,8 +603,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_aoe.png"}
               alt={"AoE/Splash Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Charge" || classType[2] === "Mystic Caster" ? (
@@ -612,8 +612,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_mystic.png"}
               alt={"Charge/Mystic Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : classType[1] === "Chain Caster" ? (
@@ -621,8 +621,8 @@ const TopImageOperator = ({ image, classType, rarity }: TopImageProps) => {
             <Image
               src={"/ClassIcons/caster_chain.png"}
               alt={"Chain Caster"}
-              width={100}
-              height={100}
+              width={128}
+              height={125}
             ></Image>
           </OperatorClassIcon>
         ) : (
