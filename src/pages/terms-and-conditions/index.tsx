@@ -597,6 +597,11 @@ const TermsWrapper = styled.div`
   align-items: left;
   text-align: left;
   margin: 2rem;
+
+  h1 {
+    border-bottom: 2px solid transparent;
+    border-color: #67b7a0;
+  }
 `;
 
 export default Terms;
