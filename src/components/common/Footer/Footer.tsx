@@ -1,19 +1,30 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const Footer: React.FC = () => {
   return (
     <FooterWrapper>
       <div className="condition-links">
-        <a>Terms of Condition</a>
-        <a>Code of Conduct</a>
-        <a>Privacy Policy</a>
+        <Link href="/terms-and-conditions">
+          <a>Terms and Conditions</a>
+        </Link>
+        <Link href="/code-of-conduct">
+          <a>Code of Conduct</a>
+        </Link>
+        <Link href="/privacy-policy">
+          <a>Privacy Policy</a>
+        </Link>
       </div>
       <div className="project-links">
-        <a>Arknights Official</a>
-        <a>GitHub</a>
+        <Link href="https://www.arknights.global/">
+          <a>Arknights Official</a>
+        </Link>
+        <Link href="https://github.com/roidsaja/arknights-hub">
+          <a>GitHub</a>
+        </Link>
       </div>
       <div className="copyright">
-        <p>© 2022 Arknights FE </p>
+        <p>© 2022 Arknights Hub </p>
       </div>
     </FooterWrapper>
   );

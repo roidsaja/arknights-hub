@@ -9,6 +9,10 @@ const nextConfig = {
   images: {
     domains: ['gamepress.gg'],
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 }
 
 module.exports = nextConfig
