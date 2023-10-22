@@ -1,44 +1,48 @@
 "use client";
 
 import React from "react";
-import { Pagination } from "@mantine/core";
-import api from "src/api";
+import { Skeleton } from "@mantine/core";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+
+import api from "../api";
+import { OperatorInfoProps } from "../components/Interfaces";
 
 export default function RootRoute() {
-  const [page, setPage] = React.useState([]);
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const itemsPerPage = 10;
-
+  const [ops, setOps] = React.useState<OperatorInfoProps>();
+  const params = useSearchParams();
+  const searchParams = params.get("op");
+  console.log(ops);
   React.useEffect(() => {
     const fetchData = async () => {
-      const data = await api.fetchAllOperator();
-      setPage(data);
+      if (searchParams) {
+        const data = await api.fetchOperator(searchParams);
+        setOps(data);
+      }
     };
 
     fetchData();
-  }, []);
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = page.slice(indexOfFirstItem, indexOfLastItem);
-
-  const totalPages = Math.ceil(page.length / itemsPerPage);
+  }, [searchParams]);
 
   return (
-    <main>
-      {currentItems.map((ops: any, index: number) => (
-        <div className="flex flex-col gap-2" key={index}>
+    <div>
+      {ops ? (
+        <>
           <h1>{ops.name}</h1>
-        </div>
-      ))}
-      <Pagination
-        value={currentPage}
-        total={totalPages}
-        radius="xl"
-        withEdges
-        color="#000000"
-        onChange={(page) => setCurrentPage(page)}
-      />
-    </main>
+          <h1>{ops.rarity}</h1>
+          {ops.art.slice(1).map((artImg, index) => (
+            <Image
+              src={artImg.link}
+              alt={"img"}
+              key={index}
+              width={500}
+              height={500}
+            />
+          ))}
+        </>
+      ) : (
+        <Skeleton />
+      )}
+    </div>
   );
 }

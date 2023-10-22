@@ -34,6 +34,15 @@ const api = {
       console.error(error);
     }
   },
+  fetchOperator: async (name: string) => {
+    try {
+      const path = `operator/${name}`;
+      const response = await fetchAPI(path, {}, {});
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 export default api;
