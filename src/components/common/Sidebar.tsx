@@ -52,8 +52,9 @@ export default function Sidebar() {
           />
           <div className="flex w-full flex-col space-y-6">
             {currentItems.map((ops: any, index: number) => {
-              const baseArt = ops.art.filter((item: any) => item.name === "E1");
-
+              const baseArt = ops.art.slice(1);
+              const baseArtURL =
+                baseArt.length > 0 ? baseArt[0].link : "/this-is-fine.png";
               return (
                 <OpsCard
                   key={index}
@@ -62,7 +63,7 @@ export default function Sidebar() {
                     name: ops.name,
                     rarity: ops.rarity,
                     class: ops.class[0],
-                    art: baseArt[0]?.link,
+                    art: baseArtURL,
                   }}
                 />
               );

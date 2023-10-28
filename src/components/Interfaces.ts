@@ -6,12 +6,7 @@ export interface CardItemProps {
     name: string;
     rarity: number;
     class: string[];
-    art: [
-      {
-        name: string;
-        link: string;
-      },
-    ];
+    art: string;
   };
 }
 export interface CardProps {

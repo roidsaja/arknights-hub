@@ -6,7 +6,6 @@ export const fetchAPI = async (path: string, urlParams: {}, options: {}) => {
     const requestURL = `https://rhodesapi.up.railway.app/api/${path}${
       queryParams ? `?${queryParams}` : ""
     }`;
-    console.log(requestURL);
     const mergedOptions = {
       next: { revalidate: 60 },
       headers: {

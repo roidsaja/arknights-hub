@@ -52,7 +52,7 @@ export default function RootLayout({
               </AppShell.Section>
             </AppShell.Navbar>
             <AppShell.Main>
-              <div className="container mb-20">{children}</div>
+              <div className="mx-auto max-w-screen-2xl px-4">{children}</div>
             </AppShell.Main>
           </AppShell>
         </MantineProvider>
