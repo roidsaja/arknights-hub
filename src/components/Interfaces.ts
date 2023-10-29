@@ -1,14 +1,12 @@
 import { ChangeEventHandler } from "react";
 
 export interface CardItemProps {
-  data?: {
-    _id?: number;
+  data: {
+    _id: number;
     name: string;
     rarity: number;
     class: string[];
-    art: {
-      Base: string;
-    };
+    art: string;
   };
 }
 export interface CardProps {
@@ -82,7 +80,7 @@ export interface OperatorInfoProps {
       level: string;
       effects: string;
       building: string;
-    }
+    },
   ];
   module: {
     name: string;
@@ -96,6 +94,13 @@ export interface OperatorInfoProps {
   talents: talent[];
   potential: talent[];
   trust: any;
+  art: [
+    {
+      name: string;
+      link: string;
+      line?: string;
+    },
+  ];
   costs: {
     "Skill Summary - 1": string;
     "Skill Summary - 2": string;
