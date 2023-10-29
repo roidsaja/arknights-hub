@@ -8,6 +8,8 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 
 import { MantineProvider } from "@mantine/core";
+import { Github } from "lucide-react";
+import Link from "next/link";
 
 import Sidebar from "../components/common/Sidebar";
 
@@ -39,7 +41,15 @@ export default function RootLayout({
                   hiddenFrom="sm"
                   size="sm"
                 />
-                ArknightsHub
+                <Link href="/">Arknights Hub</Link>
+                <Link
+                  href="https://github.com/roidsaja/arknights-hub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-neutral-600 p-[2px] pb-0 hover:bg-neutral-400"
+                >
+                  <Github fill="black" color="black" />
+                </Link>
               </Group>
             </AppShell.Header>
             <AppShell.Navbar p="md">
@@ -48,7 +58,7 @@ export default function RootLayout({
                 <Sidebar />
               </AppShell.Section>
               <AppShell.Section>
-                © {new Date().getFullYear()} ArknightsHub
+                © {new Date().getFullYear()} Arknights Hub
               </AppShell.Section>
             </AppShell.Navbar>
             <AppShell.Main>
