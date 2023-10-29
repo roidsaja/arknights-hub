@@ -47,7 +47,6 @@ export function OpsCard({ data }: CardItemProps) {
         fullWidth
         mt="md"
         radius="md"
-        className="z-10"
         onClick={() => router.push(`?op=${data.name}`)}
       >
         Details
